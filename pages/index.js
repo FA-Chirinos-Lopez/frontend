@@ -2,6 +2,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
+
+
 var count=0
 
 
@@ -14,7 +16,7 @@ export default function Home({ seminars }) {
    <div>
     {seminarsData && seminarsData.map((seminarsData) => (
    <div key={seminarsData.id}>
-        <h1>{seminarsData.id}</h1>
+        <h1 className='seminarTitle' >{seminarsData.id}</h1>
         <h2>{seminarsData.attributes.title}</h2>
         <h3>{seminarsData.attributes.subtitle}</h3>
         <p>{seminarsData.attributes.description}</p>
