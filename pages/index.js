@@ -1,31 +1,37 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import React, { Component, useRef } from 'react';
+import ReactDOM from 'react-dom'
+import { Slide } from 'react-slideshow-image'
+import useEmblaCarousel from 'embla-carousel-react'
+import Slider from "./slider";
+import Seminars from "./api/seminars"
 
 
 
-var count=0
 
-
-export default function Home({ seminars }) {
-
+export default function Home ({ seminars }) {
+//SEMINARS DATA FETCH
   let seminarsData=seminars.data
-  console.log(seminarsData,"seminarsData")
+console.log(Seminars)
+
 
  return (
-   <div>
-    {seminarsData && seminarsData.map((seminarsData) => (
-   <div key={seminarsData.id}>
-        <h1 className='seminarTitle' >{seminarsData.id}</h1>
-        <h2>{seminarsData.attributes.title}</h2>
-        <h3>{seminarsData.attributes.subtitle}</h3>
-        <p>{seminarsData.attributes.description}</p>
-   </div>
-   ))}
-   </div>
+ <div>
+ <Slider slideTimeProp="5000" >
+  
+   </Slider>
+
+
+
+</div>
+
+   
   
  )
 }
+
 
 
 export async function getStaticProps(){
@@ -33,7 +39,7 @@ export async function getStaticProps(){
 
   const res = await fetch ('http://localhost:1337/api/seminars');
   const seminars = await res.json();
-  console.log(seminars)
+  console.log(seminars.data,"desde index")
 
   return{
     props: { seminars },
