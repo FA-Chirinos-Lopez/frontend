@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.scss'
 import React, { Component, useRef } from 'react';
 import ReactDOM from 'react-dom'
 import { Slide } from 'react-slideshow-image'
@@ -14,16 +14,18 @@ import Seminars from "./api/seminars"
 export default function Home ({ seminars }) {
 //SEMINARS DATA FETCH
   let seminarsData=seminars.data
-console.log(Seminars)
-
+  const estilo=styles.text
+  
 
  return (
- <div>
- <Slider slideTimeProp="5000" >
+ <div >
+ <h1 className={estilo} >Hello Style!</h1>
   
-   </Slider>
+    <Slider>
+  
+    </Slider>
 
-
+  
 
 </div>
 

@@ -4,10 +4,10 @@ import Home from "./index.js"
 import "react-slideshow-image/dist/styles.css";
 import Seminars, {initialUrl} from "./api/seminars"
 import Url from "./api/url"
+import SliderContent, { AddSlide } from "./components/SliderContent.js";
+ 
+ 
 
-let seminarsG
-
-export const slideImages = [];
 
 
 
@@ -41,7 +41,8 @@ class Slider extends Component {
 
   
 
-
+ 
+ 
   render() {
     const properties = {
       duration: this.props.slideTimeProp,
@@ -52,11 +53,11 @@ class Slider extends Component {
       easing: "ease",
       indicators: (i) => <div className="indicator">{i + 1}</div>
     };
-    const sliderAddPush = (valueToAdd) =>{
-        slideImages.push(valueToAdd)
-    }
 
 
+    const slideImages = SliderContent
+
+    
     return (
       <div className="App">
       
