@@ -1,7 +1,7 @@
 import React , { Component } from "react";
-import {Home} from "../index";
-import Url from "../api/url"
-import Slider, {NextSlide} from "../slider"
+import {Home} from "../pages/index";
+import Url from "./url"
+import Slider, {NextSlide} from "./slider"
 
 const initialUrl = Url+'api/seminars';
 
@@ -44,7 +44,11 @@ return(
        <button onClick={NextSlide} type="button">
        Go Next by export function
      </button>
+   
+     
     </div>
+
+    
 )
 
 

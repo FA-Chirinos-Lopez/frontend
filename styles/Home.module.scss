@@ -1,15 +1,34 @@
 .seminarTitle{
   text-align: center;
 }
+.slider{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: 'white';
+}
+.myModal {
+ 
+  width:100%;
+  height: 100%;
+  //background-color: red;
+  background: white;
+}
+
+
+.myModalo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+}
 
 .text{
-  color:red
+  
 }
-
-.text1{
-  color:royalblue
-}
-
 .container {
   padding: 0 2rem;
 }

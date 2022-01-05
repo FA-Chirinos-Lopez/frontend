@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Slide } from "react-slideshow-image";
-import Home from "./index.js"
+import Home from "../pages/index"
 import "react-slideshow-image/dist/styles.css";
-import Seminars, {initialUrl} from "./api/seminars"
-import Url from "./api/url"
-import SliderContent, { AddSlide } from "./components/SliderContent.js";
+import styles from '../styles/Home.module.scss'
+import Url from "../components/url"
+import SliderContent, { AddSlide } from "./SliderContent.js";
  
  
 
@@ -59,7 +59,7 @@ class Slider extends Component {
 
     
     return (
-      <div className="App">
+      <div className={this.props.className}>
       
         <h3>Slide Effect{Url}</h3>
         <div className="slide-container">

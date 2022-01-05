@@ -1,6 +1,6 @@
 import React from "react";
-import Slider, {slideImages} from "../slider"
-import Seminars from "../api/seminars";
+import Slider, {slideImages} from "./slider"
+import Seminars from "./seminars";
 
 const SliderContent =
     
