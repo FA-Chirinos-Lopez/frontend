@@ -17,12 +17,13 @@ return{
 
 export async function getServerSideProps() {
     try {
-      const res = await fetch("http://localhost:1337/api/seminars");
-      const data = await res.json();
-      const seminarsData = data.data
+    const resScreens = await fetch("http://localhost:1337/api/screens?populate=%2A");
+
+    const dataScreens = await resScreens.json();
+    const screensData = dataScreens.data
       return {
         props: {
-          seminarsData,
+          screensData,
         },
       };
     } catch (error) {
@@ -32,18 +33,23 @@ export async function getServerSideProps() {
 
 
 
-export default function screensmain({seminarsData}) {
+export default function screensmain({screensData}) {
+    console.log(screensData)
 return (
     <div>
     <h1>Screens Main View</h1>
-    {seminarsData.map((seminarsData,id) => (
+    {screensData.map((screensData,id) => (
         <div className='seminarSlide'  key={id}>
         <Link href={`/${id+1}`}>
-                <h1 className='seminarTitle' >{seminarsData.attributes.title}        ----------                       {id}</h1>
-        </Link>
-               <Slider></Slider>
+        <div>
+                <h1 >{screensData.attributes.screenName}        ----------                       ID:{id}</h1>
+                
+        </div>
+        
+        </Link>       
         </div>
     ))}
+
     </div>
 )
 }
@@ -54,3 +60,16 @@ return (
 /*  <h2>{seminarsData.attributes.title}</h2>
                 <h3>{seminarsData.attributes.subtitle}</h3>
                 <p>{seminarsData.attributes.description}</p> */
+
+
+/*     {seminarsData.map((seminarsData,id) => (
+        <div className='seminarSlide'  key={id}>
+        <Link href={`/${id+1}`}>
+        <div>
+                <h1 className='seminarTitle' >{seminarsData.attributes.title}        ----------                       {id}</h1>
+                <Slider></Slider>
+        </div>
+        </Link>
+               
+        </div>
+    ))} */
