@@ -11,15 +11,12 @@ import { FullScreen, useFullScreenHandle } from "react-full-screen";
 
 
 
-export default function Home ({ seminars }) {
+export default function Home ({ seminars,URL }) {
 
   const handle = useFullScreenHandle();
-
+  
 
 //SEMINARS DATA FETCH
-  let seminarsData=seminars.data
-  const estilo=styles.text
-
 
  return (
  <div>
@@ -38,12 +35,6 @@ export default function Home ({ seminars }) {
     </Slider>
  </FullScreen>
 </div>
-  
-    <2021 >
-    </2021>
-    <2022>
- 
-   
 </div>
 
    
@@ -53,7 +44,22 @@ export default function Home ({ seminars }) {
 
 
 
-export async function getStaticProps(){
+
+export async function getServerSideProps(){
+const URL = process.env.URL_TO_STRAPI_API
+console.log(URL," VARIABLE ENVIROMENTAL");
+
+return{
+    props:{URL}
+}
+}
+
+
+
+
+
+
+/* export async function getStaticProps(){
   //Get API information
 
   const res = await fetch ('http://localhost:1337/api/seminars');
@@ -67,6 +73,6 @@ export async function getStaticProps(){
 
 }
  
-
+ */
 
 
