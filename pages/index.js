@@ -14,7 +14,7 @@ import { FullScreen, useFullScreenHandle } from "react-full-screen";
 export default function Home ({ seminars,URL }) {
 
   const handle = useFullScreenHandle();
-  
+   
 
 //SEMINARS DATA FETCH
 

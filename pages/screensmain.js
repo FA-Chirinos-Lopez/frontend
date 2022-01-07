@@ -1,8 +1,12 @@
 import Link from "next/link";
 import Slider from "../components/slider"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import HeaderSL from "../components/HeaderSL";
+import FooterSL from "../components/FooterSL";
+import Layout from "../components/Layout";
 
 
-
+const URL = "http://localhost:1337"
 
 /* export async function getServerSideProps(){
 const URL = process.env.URL_TO_STRAPI_API
@@ -16,8 +20,9 @@ return{
  */
 
 export async function getServerSideProps() {
+    
     try {
-    const resScreens = await fetch("http://localhost:1337/api/screens?populate=%2A");
+    const resScreens = await fetch(URL+"/api/screens?populate=%2A");
 
     const dataScreens = await resScreens.json();
     const screensData = dataScreens.data
@@ -34,22 +39,30 @@ export async function getServerSideProps() {
 
 
 export default function screensmain({screensData}) {
-    console.log(screensData)
+    
 return (
     <div>
-    <h1>Screens Main View</h1>
+    <Layout>
+    <div className="container" >
+    
+    <h1 class="display-5">Screens Main View</h1>
+    <div className="row g-2" >
+    
     {screensData.map((screensData,id) => (
-        <div className='seminarSlide'  key={id}>
+        <div  key={id} className="col-6 card " style={{width: "18rem", height:"13rem"}}>
+        <h3 class="card-title" style={{textAlign: "center"}}>{screensData.attributes.screenName}</h3>
         <Link href={`/${id+1}`}>
-        <div>
-                <h1 >{screensData.attributes.screenName}        ----------                       ID:{id}</h1>
+        <div style={{textAlign: "center"}} >
+                <h1 className="display-6 btn btn-primary card-title"  >Go to screen</h1>
                 
         </div>
         
         </Link>       
         </div>
     ))}
-
+    </div>
+    </div>
+    </Layout>
     </div>
 )
 }
