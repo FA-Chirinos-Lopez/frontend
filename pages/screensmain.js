@@ -46,12 +46,12 @@ return (
     <Layout>
     <div className="container" >
     
-    <h1 class="display-5">Screens Main View</h1>
+    <h1 className="display-5">Screens Main View</h1>
     <div className="row g-2" >
     
     {screensData.map((screensData,id) => (
         <div  key={id} className="col-6 card " style={{width: "18rem", height:"13rem"}}>
-        <h3 class="card-title" style={{textAlign: "center"}}>{screensData.attributes.screenName}</h3>
+        <h3 className="card-title" style={{textAlign: "center"}}>{screensData.attributes.screenName}</h3>
         <Link href={`/${id+1}`}>
         <div style={{textAlign: "center"}} >
                 <h1 className="display-6 btn btn-primary card-title"  >Go to screen</h1>
