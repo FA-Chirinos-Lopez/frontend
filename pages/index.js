@@ -44,7 +44,7 @@ export default function Home ({ seminars,URL }) {
 
 
 
-
+/* 
 export async function getServerSideProps(){
 const URL = process.env.URL_TO_STRAPI_API
 console.log(URL," VARIABLE ENVIROMENTAL");
@@ -53,7 +53,7 @@ return{
     props:{URL}
 }
 }
-
+ */
 
 
 

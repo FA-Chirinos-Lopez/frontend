@@ -12,7 +12,7 @@ import Container from "../components/container";
 import AdsContainer from "../components/AdsContainer";
 
 
-const URL ="http://localhost:1337"
+const URL = "https://backend-l3ahb.ondigitalocean.app"
 
 const slideImages=[""]
 slideImages.length=0
@@ -39,7 +39,7 @@ export default function ScreensDisplay({ screensData,imgDataADS }) {
   //ARRAYS DEFINITION
   let seminarsData= screensData.attributes.stage_timetables.data;
   let halldescriptorsData= screensData.attributes.hall_descriptors.data;
-  let advertisementsData= screensData.attributes.advertisements.data;
+  let advertisementsData= screensData.attributes.advertisementsToAdd.data;
   
   
   
@@ -71,9 +71,10 @@ export default function ScreensDisplay({ screensData,imgDataADS }) {
           Time={advertisementsData.attributes.Time} Title={advertisementsData.attributes.Title}  
           Location={advertisementsData.attributes.Location}  />
              
-             
+           {console.log(findId(imgDataADS,id+1))}  
             
         </div>
+        
         </div>
         )))
     return (
@@ -230,7 +231,7 @@ class Slider extends Component {
           </Slide>
         </div>
 
-        <div className="btn-group">
+        <div className="btn-group" style={{position:"relative", right:"-25vh", top:"-13vh"}}>
           <button className="btn btn-success" onClick={this.back} type="button">
             Go Back
           </button>

@@ -6,7 +6,8 @@ import FooterSL from "../components/FooterSL";
 import Layout from "../components/Layout";
 
 
-const URL = "http://localhost:1337"
+const URL =  process.env.DB_URL  /* "http://localhost:1337"  */
+
 
 /* export async function getServerSideProps(){
 const URL = process.env.URL_TO_STRAPI_API
@@ -20,8 +21,8 @@ return{
  */
 
 export async function getServerSideProps() {
-    
-    try {
+    console.log(process.env.DB_URL)
+     try {
     const resScreens = await fetch(URL+"/api/screens?populate=%2A");
 
     const dataScreens = await resScreens.json();
