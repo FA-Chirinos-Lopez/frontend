@@ -6,7 +6,7 @@ import FooterSL from "../components/FooterSL";
 import Layout from "../components/Layout";
 
 
-const URL = "https://backend-l3ahb.ondigitalocean.app" /*  process.env.DB_URL */  /* "http://localhost:1337"  */
+const URL =  process.env.DB_URL  /* "http://localhost:1337"  */
 
 
 /* export async function getServerSideProps(){
